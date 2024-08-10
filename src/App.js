@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
+  const [todos, setTodos] = useState([]);
+  const inputRef = useRef();
+  const handleAddTodo = () => {
+    const text = inputRef.current.value;
+    setTodos([...todos, text]);
+    inputRef.current.value = "";
+    console.log(text); // Just to test if the prop is returning
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>To Do List</h2>
+      <ul>
+        {todos.map((item) => {
+          return (<li>{item}</li>)
+        })}
+      </ul>
+      <input ref={inputRef} placeholder='Enter item........' />
+      <button onClick={handleAddTodo}>Add</button>
     </div>
   );
 }

@@ -1,3 +1,37 @@
+# AHMED's DOCUMENTATION FOR THIS TO-DO-LIST webapp Using React.
+
+1- Created a react project using  
+    npx create-react-app todo-list
+2- To start the development server run this code: 
+  cd todo-list
+  npm start
+3- start with the src/App.js and clear unwanted fragments
+4- delete the logo.svg and its import statement & app.test.js file.
+5- clear App.css current style rules.
+6- start with the App.js and build all the needed components.
+	_ start by adding the page title "To Do List".
+	_ unordered list to present the list items.
+	_ Input component to add a new task.
+	_ A button component for adding items.	
+7- To render the added items in the Unordered list, we must 
+	use the useState with an initial state as an
+	empty array to manage the to-do-items .
+	not to forget to import useState from react.
+8- so, within the <ul> component iterate through the todos array with map()
+	then the arrow function will  return the item in within the <ul> as an <li>.
+9- Now its tifme to work on the logic for the input element to add the new item to the todo array.
+	 to do that I imported and used the useRef to reference the input element.
+10- Note that the useRef will allow us to directly reference any html element.
+11- To make the Add button functional, i added a clickHandler function expression and name it
+	handleAddTodo; make sure to add the onClick attribute to the button component.
+12- Within the handleAddTodo, I get the value of the current element which is the input
+	and pass it to a text variable.
+13- Now, I have to define the setTodos to add the items in the todos array. This will take place within
+	the handleAddTodo. This will be accomplished by the spread operator to copy the last state to the 
+	new one with a newly added item.
+14- Now, I had a problem that the input value stays in after adding a new item successfuly.
+	To work around that I make use of the useRef again but now with an empty string value.
+=====================================================================================
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
